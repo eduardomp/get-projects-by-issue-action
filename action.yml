@@ -1,0 +1,16 @@
+name: 'Get projects by issue/PR'
+description: 'Get the projects associated to an issue or PR'
+inputs:
+  issue_number:
+    description: 'The number of the issue'
+  pr_number:
+    description: 'The number of the PR'
+  token:
+    description: 'Github token'
+    required: true
+outputs:
+  projects: # list of projects
+    description: 'list of associated projects'
+runs:
+  using: 'node16'
+  main: 'index.js'
