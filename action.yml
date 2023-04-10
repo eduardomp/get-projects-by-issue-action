@@ -13,4 +13,4 @@ outputs:
     description: 'list of associated projects'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
