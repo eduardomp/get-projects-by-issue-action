@@ -1,7 +1,20 @@
 {
+  "name": "get-projects-by-issue-action",
+  "description": "Github action to get projects associated to issues/pr's",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eduardomp/get-projects-by-issue-action"
+  },
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
     "@octokit/graphql": "^5.0.5"
-  }
+  },
+  "keywords": [],
+  "author": "Eduardo Medeiros Pereira <edu.medeirospereira@gmail.com",
+  "license": "MIT"
 }
