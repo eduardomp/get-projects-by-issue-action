@@ -33,7 +33,7 @@ A JSON array containing a list of objects that represents the associated project
 ## Example usage
 
 ```yaml
-    - name: Get associated projects
+    - name: Get associated projects by Issue number
         uses: eduardomp/get-projects-by-issue-action@main
         with:
           issue_number: ${{ github.event.issue.number }}
