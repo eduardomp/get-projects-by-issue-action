@@ -10,7 +10,11 @@ const get_projects_by_organization = async (payload, token) => {
     `
       query($organization: String!){
         organization(login: $organization){
-          projectV2
+          projectV2 {
+            title
+            updatedAt
+            url
+          }
         }
       }
     `,
