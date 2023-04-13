@@ -39,23 +39,18 @@ const get_projects_by_organization = async (payload, token) => {
 
 const action = () => {
     try {
+      const payload = github.context.payload 
       const token = core.getInput('token');
       const issueNumber = core.getInput('issue_number');
       const prNumber = core.getInput('pr_number');
-      let projects = [];  
-
+      let projects = get_projects_by_organization(payload,token);
+      
+      console.log(`The event payload: ${JSON.stringify(payload, undefined, 2)}`);
       console.log(`Is Issue: ${!!issueNumber}`);
       console.log(`Is PR: ${!!prNumber}`);
-    
-      projects = get_projects_by_organization(payload,token);
-
       console.log(`Projects: ${projects}`);
 
       core.setOutput("projects", projects);
-      
-      // Get the JSON webhook payload for the event that triggered the workflow
-      const payload = JSON.stringify(github.context.payload, undefined, 2)
-      console.log(`The event payload: ${payload}`);
     
     } catch (error) {
       core.setFailed(error.message);
